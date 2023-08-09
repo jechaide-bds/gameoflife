@@ -1,4 +1,4 @@
-import { DEFAULT_COLUMNS } from '../utils/constants';
+import { DEFAULT_COLUMNS } from '../../utils/constants';
 
 interface GameContainerProps {
     children: any

@@ -2,7 +2,7 @@ import React, { useCallback, useRef, useState } from 'react';
 import useInterval from '../hook/useInterval';
 import { DEFAULT_ROWS, DEFAULT_COLUMNS, POSITIONS } from '../utils/constants';
 import { randomTiles, createGridDeepCopy, generateEmptyGrid } from '../utils/helpers';
-import { GridTemplate } from '../templates/GridTemplate';
+import { GridTemplate } from '../components/templates/GridTemplate';
 
 const GridPage = () => {
   const [running, setRunning] = useState(false);

@@ -1,5 +1,5 @@
-import { ControlPanel, GridFunction } from "../components/ControlPanel";
-import { Grid } from "../components/Grid";
+import { ControlPanel, GridFunction } from "../atoms/ControlPanel";
+import { Grid } from "../atoms/Grid";
 import { GameContainer } from "../containers/GameContainer";
 
 interface GridTemplateProps {
