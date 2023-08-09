@@ -1,11 +1,14 @@
 import React, { useCallback, useRef, useState } from 'react';
-import './App.css';
-import useInterval from './hook/useInterval';
-import { DEFAULT_COLUMNS, DEFAULT_ROWS, POSITIONS } from './utils/constants';
-import { createGridDeepCopy, generateEmptyGrid, randomTiles } from './utils/helpers';
+import useInterval from '../hook/useInterval';
+import { DEFAULT_COLUMNS, DEFAULT_ROWS, POSITIONS } from '../utils/constants';
+import { createGridDeepCopy, generateEmptyGrid, randomTiles } from '../utils/helpers';
 
-const App = () => {
+interface GameContainerProps {
+    children: any
+}
 
+const GameContainer = ({children}: GameContainerProps) => {
+  
   const [running, setRunning] = useState(false);
   const runningRef = useRef(running);
   runningRef.current = running;
@@ -46,7 +49,6 @@ const App = () => {
 
     setGrid(gridCopy);
   }, []);
-
   
   useInterval(() => {
     runSimulation(grid);
@@ -61,41 +63,9 @@ const App = () => {
         margin: "0 auto",
       }}
     >
-      {grid?.map((rows: any[], i) =>
-        rows.map((col, k) => (
-          <div
-            style={{
-              width: 20,
-              height: 20,
-              backgroundColor: grid[i][k] ? "#F68E5F" : undefined,
-              border: "1px solid #595959",
-            }}
-          />
-        ))
-      )}
-    <button
-    onClick={() => {
-      setRunning(!running);
-    }}
->
-  {running ? "Stop" : "Start"}
-    </button>
-    <button
-      onClick={() => {
-        setGrid(generateEmptyGrid());
-      }}
-    >
-      Clear board
-    </button>
-    <button
-  onClick={() => {
-    setGrid(randomTiles());
-  }}
->
-  Random
-</button>
+        {children}
     </div>
   );
 }
 
-export default App;
+export default { GameContainer };
