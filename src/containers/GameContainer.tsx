@@ -1,7 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react';
 import useInterval from '../hook/useInterval';
 import { DEFAULT_COLUMNS, DEFAULT_ROWS, POSITIONS } from '../utils/constants';
-import { createGridDeepCopy, generateEmptyGrid, randomTiles } from '../utils/helpers';
+import { createGridDeepCopy, randomTiles } from '../utils/helpers';
 
 interface GameContainerProps {
     children: any
@@ -68,4 +68,4 @@ const GameContainer = ({children}: GameContainerProps) => {
   );
 }
 
-export default { GameContainer };
+export { GameContainer };

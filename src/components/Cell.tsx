@@ -1,8 +1,19 @@
+import { Color } from "../utils/constants"
+
 interface CellProps {
-    title: string 
+    grid: number[][]
+    column: number
+    row: number
 }
-const Cell = ({ title} : CellProps) => {
-    return <div></div>
+const Cell = ({ grid, column, row } : CellProps) => {
+    return           <div
+    style={{
+      width: 20,
+      height: 20,
+      backgroundColor: grid[column][row] ? Color.LIVING_CELL : undefined,
+      border: Color.BORDER,
+    }}
+  />
 }
 
 export { Cell }
