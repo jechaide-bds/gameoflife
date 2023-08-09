@@ -1,5 +1,6 @@
 
-type GridFunction = () => React.SetStateAction<number[][]>
+export type GridFunction = () => React.SetStateAction<number[][]>
+
 interface ControlPanelProps {
     setRunning: (running: boolean) => void
     running: boolean
@@ -8,30 +9,43 @@ interface ControlPanelProps {
     setGrid: (value: React.SetStateAction<number[][]>) => void
 }
 
-const ControlPanel = ({ setRunning, running, generateEmptyGrid, randomTiles, setGrid } : ControlPanelProps) => {
-    return   <div>
-    <button
-      onClick={() => {
-        setRunning(!running);
-      }}
-    >
-    {running ? "Stop" : "Start"}
-      </button>
-      <button
-        onClick={() => {
-          setGrid(generateEmptyGrid());
-        }}
-    >
-      Clear board
-    </button>
-    <button
-      onClick={() => {
-        setGrid(randomTiles());
-      }}
-    >
-      Random
-    </button>
-  </div>
+const ControlPanel = ({ 
+          setRunning, 
+          running, 
+          generateEmptyGrid, 
+          randomTiles, 
+          setGrid 
+        } : ControlPanelProps) => {
+
+  return <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center"
+          }}>
+            <button
+              onClick={() => {
+                setRunning(!running);
+              }}
+            >
+            {running ? "Stop" : "Start"}
+            </button>
+            <button
+              onClick={() => {
+                setGrid(generateEmptyGrid());
+              }}
+            >
+              Clear board
+            </button>
+            <button
+              onClick={() => {
+                setGrid(randomTiles());
+              }}
+            >
+            Random
+          </button>
+    </div>
 }
 
 export { ControlPanel }

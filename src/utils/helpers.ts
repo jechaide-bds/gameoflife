@@ -1,4 +1,4 @@
-import { DEFAULT_COLUMNS, DEFAULT_ROWS } from "./constants";
+import { CellState, Color, DEFAULT_COLUMNS, DEFAULT_ROWS } from "./constants";
 
 export const generateEmptyGrid = (): number[][] => {
   const rows = [];
@@ -17,3 +17,17 @@ export const randomTiles = (): number[][] => {
   };
 
   export const createGridDeepCopy = (grid: any) => { return JSON.parse(JSON.stringify(grid))}
+
+  export const isAlive = (grid: number[][], row: number, col: number) => {
+    return grid[row][col] = 3
+  }
+
+  export const setColorByState = (cellState: CellState): Color => {
+    const colorByState = {
+      [CellState.ALIVE]: Color.LIVING_CELL,
+      [CellState.SURVIVED]: Color.SURVIVING_CELL,
+      [CellState.DEAD]: Color.DEAD_CELL,
+    }
+    
+    return colorByState[cellState]
+  }
