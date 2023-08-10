@@ -3,6 +3,7 @@ import useInterval from '../hook/useInterval';
 import { DEFAULT_ROWS, DEFAULT_COLUMNS, POSITIONS } from '../utils/constants';
 import { randomTiles, createGridDeepCopy, generateEmptyGrid } from '../utils/helpers';
 import { GridTemplate } from '../components/templates/GridTemplate';
+import { Description } from '../components/atoms/Description';
 
 const GridPage = () => {
   const [running, setRunning] = useState(false);
@@ -52,15 +53,17 @@ const GridPage = () => {
     runSimulation(grid);
   }, 150);
   
-  return (
-    <GridTemplate 
-        grid={grid}
-        setRunning={setRunning} 
-        running={running}
-        generateEmptyGrid={generateEmptyGrid} 
-        randomTiles={randomTiles} 
-        setGrid={setGrid}
-    />
+  return (<>
+      <Description />
+      <GridTemplate 
+          grid={grid}
+          setRunning={setRunning} 
+          running={running}
+          generateEmptyGrid={generateEmptyGrid} 
+          randomTiles={randomTiles} 
+          setGrid={setGrid}
+      />
+    </>
   );
 }
 

@@ -1,4 +1,3 @@
-import { Color } from "../../utils/constants"
 import { setColorByState } from "../../utils/helpers"
 
 interface CellProps {

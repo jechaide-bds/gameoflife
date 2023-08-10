@@ -8,44 +8,63 @@ interface ControlPanelProps {
     randomTiles: GridFunction
     setGrid: (value: React.SetStateAction<number[][]>) => void
 }
-
-const ControlPanel = ({ 
-          setRunning, 
-          running, 
-          generateEmptyGrid, 
-          randomTiles, 
-          setGrid 
-        } : ControlPanelProps) => {
-
-  return <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "center"
-          }}>
-            <button
-              onClick={() => {
-                setRunning(!running);
-              }}
-            >
-            {running ? "Stop" : "Start"}
-            </button>
-            <button
-              onClick={() => {
-                setGrid(generateEmptyGrid());
-              }}
-            >
-              Clear board
-            </button>
-            <button
-              onClick={() => {
-                setGrid(randomTiles());
-              }}
-            >
-            Random
-          </button>
-    </div>
+interface ButtonProps {
+  onClick: () => void
+  label: string
 }
 
-export { ControlPanel }
+const Button = ({ onClick, label }: ButtonProps) => {
+  return (
+    <button onClick={onClick}
+    style={{
+      padding: '1.5em',
+      margin: '2px',
+      width: '8vw'
+    }}>
+      {label}
+    </button>
+  );
+};
+
+export default Button;
+
+const ControlPanel = ({
+  setRunning,
+  running,
+  generateEmptyGrid,
+  randomTiles,
+  setGrid
+}: ControlPanelProps) => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        marginLeft: "20em",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Button
+        onClick={() => {
+          setRunning(!running);
+        }}
+        label={running ? "Stop" : "Start"}
+      />
+      <Button
+        onClick={() => {
+          setGrid(generateEmptyGrid());
+        }}
+        label="Clear"
+      />
+      <Button
+        onClick={() => {
+          setGrid(randomTiles());
+        }}
+        label="Random"
+      />
+    </div>
+  );
+};
+
+export { ControlPanel };
