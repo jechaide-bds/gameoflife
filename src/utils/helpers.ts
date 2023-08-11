@@ -5,6 +5,7 @@ export const generateEmptyGrid = (): number[][] => {
   for (let i = 0; i < DEFAULT_ROWS; i++) {
     rows.push(Array.from(Array(DEFAULT_COLUMNS), () => 0));
   }
+
   return rows;
 };
 
@@ -17,10 +18,6 @@ export const randomTiles = (): number[][] => {
   };
 
   export const createGridDeepCopy = (grid: any) => { return JSON.parse(JSON.stringify(grid))}
-
-  export const isAlive = (grid: number[][], row: number, col: number) => {
-    return grid[row][col] = 3
-  }
 
   export const setColorByState = (cellState: CellState): Color => {
     const colorByState = {

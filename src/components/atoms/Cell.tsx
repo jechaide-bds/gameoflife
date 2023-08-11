@@ -7,6 +7,7 @@ interface CellProps {
 }
 const Cell = ({ grid, column, row } : CellProps) => {
     return <div
+            data-testid="cell-item"
             style={{
               width: 20,
               height: 20,

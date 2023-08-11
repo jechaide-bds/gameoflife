@@ -37,6 +37,7 @@ const ControlPanel = ({
 }: ControlPanelProps) => {
   return (
     <div
+      data-testid="control-panel"
       style={{
         display: "flex",
         marginLeft: "20em",

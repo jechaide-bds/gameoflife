@@ -54,16 +54,16 @@ const GridPage = () => {
   }, 150);
   
   return (<>
-      <Description />
-      <GridTemplate 
-          grid={grid}
-          setRunning={setRunning} 
-          running={running}
-          generateEmptyGrid={generateEmptyGrid} 
-          randomTiles={randomTiles} 
-          setGrid={setGrid}
-      />
-    </>
+            <Description />
+            <GridTemplate 
+                grid={grid}
+                setRunning={setRunning} 
+                running={running}
+                generateEmptyGrid={generateEmptyGrid} 
+                randomTiles={randomTiles} 
+                setGrid={setGrid}
+            />
+          </>
   );
 }
 

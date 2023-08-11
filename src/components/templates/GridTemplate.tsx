@@ -21,9 +21,10 @@ const GridTemplate = ({
     }: GridTemplateProps) => {
     
     return (
-        <GameContainer>
-          <Grid grid={grid} />
+        <GameContainer data-testid="game-container">
+          <Grid grid={grid} data-testid="template-grid" />
           <ControlPanel 
+            data-testid="control-panel"
             setRunning={setRunning} 
             running={running}
             generateEmptyGrid={generateEmptyGrid}

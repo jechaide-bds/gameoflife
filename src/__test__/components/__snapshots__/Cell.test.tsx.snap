@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cell renders the grid container correctly 1`] = `
+Array [
+  <div
+    data-testid="cell-item"
+    style="width: 20px; height: 20px; background-color: rgb(249, 89, 89); border: 1px solid #595959;"
+  />,
+]
+`;
