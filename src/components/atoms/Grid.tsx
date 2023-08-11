@@ -5,13 +5,13 @@ interface GridProps {
 }
 const Grid = ({ grid } : GridProps) => {
 
-    return <div data-testid="grid-parent">
-                {grid?.map((rows: number[], i) =>
-                    rows.map((col, k) => (
-                    <Cell data-testid="cell-item" key={i+k} grid={grid} column={i} row={k}/>
-                    ))
-                )}
-            </div>
+    return <>
+            {grid?.map((rows: number[], i) =>
+                rows.map((col, k) => (
+                <Cell data-testid="cell-item" key={i+k} grid={grid} column={i} row={k}/>
+                ))
+            )}
+            </>
 }
 
 export { Grid }

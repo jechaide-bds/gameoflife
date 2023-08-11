@@ -11,8 +11,7 @@ const GameContainer = ({children}: GameContainerProps) => {
       style={{
         display: "grid",
         gridTemplateColumns: `repeat(${DEFAULT_COLUMNS}, 20px)`,
-        width: "80vw",
-        height: "80vh",
+
         margin: "0 auto",
         alignItems: "center",
         justifyContent: "center"
